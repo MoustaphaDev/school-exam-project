@@ -12,7 +12,7 @@ class HomeView extends AbstractView {
     return `
     ${Hero()}
     ${About()}
-    ${await ProductsGlimpse()}
+    ${ProductsGlimpse()}
     `;
   }
 }

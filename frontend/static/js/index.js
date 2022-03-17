@@ -1,5 +1,8 @@
 import { router, navigateTo } from "./router/router.js";
 import { Navbar } from "./partials/index.js";
+import initCursor from "./utils/cursor.js";
+
+initCursor();
 
 document.getElementById("nav").innerHTML = Navbar();
 

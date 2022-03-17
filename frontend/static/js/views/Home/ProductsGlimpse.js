@@ -1,13 +1,7 @@
-const styles = {};
+import ProductsData from "/static/productsData.js";
 
-async function getProducts() {
-  const response = await fetch("/static/products.json");
-  const products = (await response.json()).data;
-  return products;
-}
-
-const ProductsGlimpse = async () => {
-  const [prod1, prod2, prod3] = await getProducts();
+const ProductsGlimpse = () => {
+  const [prod1, prod2, prod3] = ProductsData.data;
   return `
   
     <h2 class="font-bold mb-20 text-xl uppercase text-center mt-28">Nos produits</h2>
@@ -16,11 +10,11 @@ const ProductsGlimpse = async () => {
           .map((product, idx) => {
             return `
             <div class="flex flex-col justify-evenly items-center">
-                <a class="flex w-full transition-transform justify-center items-center h-3/5 ${
+                <a data-link class="flex w-full transition-transform justify-center items-center h-3/5 ${
                   idx === 1
                     ? "hover:scale-[1.3] scale-[1.2] -translate-y-12"
                     : "hover:scale-110"
-                }" data-link href="/products"><img class="h-full" src='${
+                }" href='/products'><img class="h-full" src='${
               product.url
             }' /></a>
                 <h1 class="font-bold text-center text-ellipsis overflow-hidden whitespace-nowrap w-[24ch] ${

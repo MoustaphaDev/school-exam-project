@@ -1,5 +1,6 @@
 import AbstractView from "../AbstractView.js";
 import About from "./About.js";
+import Delivery from "./Delivery.js";
 import Hero from "./Hero.js";
 import ProductsGlimpse from "./ProductsGlimpse.js";
 
@@ -13,6 +14,7 @@ class HomeView extends AbstractView {
     ${Hero()}
     ${About()}
     ${await ProductsGlimpse()}
+    ${Delivery()}
     `;
   }
 }

@@ -8,15 +8,15 @@ const ProductsGlimpse = () => {
     <div class="grid px-16 grid-cols-3 gap-x-12 gap-y-8 py-4">
         ${[prod1, prod2, prod3]
           .map((product, idx) => {
+            const productUrl = new URL(product.url, import.meta.url).href;
+
             return `
             <div class="flex flex-col justify-evenly items-center">
                 <a data-link class="flex w-full transition-transform justify-center items-center h-3/5 ${
                   idx === 1
                     ? "hover:scale-[1.3] scale-[1.2] -translate-y-12"
                     : "hover:scale-110"
-                }" href='/products'><img class="h-full" src='${
-              product.url
-            }' /></a>
+                }" href='/products'><img class="h-full" src='${productUrl}' /></a>
                 <h1 class="font-bold text-center text-ellipsis overflow-hidden whitespace-nowrap w-[24ch] ${
                   idx === 1 ? "scale-[1.3]" : ""
                 }">${product.title}</h1>

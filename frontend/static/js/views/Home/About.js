@@ -1,4 +1,4 @@
-import aboutImg from "/static/img/about-img.jpg";
+import aboutImg from "../../../img/about-img.jpg";
 
 const About = () => {
   return `

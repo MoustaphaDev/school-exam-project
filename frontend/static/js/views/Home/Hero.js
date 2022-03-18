@@ -1,6 +1,4 @@
-import heroImg from "/static/img/hero-img.jpg";
-
-const styles = {};
+import heroImg from "../../../img/hero-img.jpg";
 
 const Hero = () => {
   return `
